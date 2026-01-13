@@ -1,0 +1,12 @@
+:root{
+  --main-background-color: #f4eee2;
+  --button-background-color: #db751e;
+  --second-background-color: #f5e7c6;
+  --third-background-color: #3d3733d0;
+  --color: #2f3336;
+
+}
+
+body{
+  background-color: var(--main-background-color);
+}
