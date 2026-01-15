@@ -306,14 +306,16 @@ body{
       font-family: 'saira';
       width: 130px;
       height: 40px;
-      background-color: var(--button-background-color);
+      /* background-color: var(--button-background-color); */
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
+      border-left: 2px solid var(--button-background-color);
+      color: var(--color);
       font-weight: bold;
-      border-radius: 10px;
-      margin: 0 1em;
+
+      text-align: center;
+      margin: 0 auto;
       text-transform: uppercase;
     }
 
@@ -331,6 +333,107 @@ body{
         transform: translateX(-50%);
       }
     }
+
+.Aboutus-section{
+  width: 100%;
+  padding: 80px 0;
+  position: relative;
+  height: 80vh;
+  background-image: url("images/1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 7em 0 0 0;
+}
+
+.Aboutus-section::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.about-container{
+  width: min(1100px, 92%);
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.aboutimage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-us-Image{
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  border-radius: 22px;
+  object-fit: cover;
+}
+
+
+.about-us-content{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.about-title{
+  font-size: 2.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color);
+}
+
+.about-block h4{
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--button-background-color);
+  margin-bottom: 6px;
+}
+
+.about-block p{
+  font-size: 1.05rem;
+  line-height: 1.7;
+  font-weight: 500;
+  color: var(--color);
+  max-width: 600px;
+}
+
+
+.about-btn{
+  width: fit-content;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: var(--button-background-color);
+  border: 2px solid #000;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s ease;
+}
+
+.about-btn:hover{
+  transform: translate(-3px, -3px);
+  box-shadow: 4px 4px 0 #000;
+}
+
+.about-btn:active{
+  transform: translate(1px, 1px);
+  box-shadow: 0 0 0 #000;
+}
+
 
 @media (max-width: 950px){
   .navlinks{
@@ -383,6 +486,23 @@ body{
     height: 38px;
     width: 100px;
     font-size: 0.7rem;
+  }
+
+  .Aboutus-section{
+    margin: 28em 0 0 0;
+  }
+
+   .about-container{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-us-content{
+    align-items: center;
+  }
+
+  .about-block p{
+    max-width: 100%;
   }
 }
 
@@ -440,5 +560,25 @@ body{
     height: 38px;
     width: 90px;
     font-size: 0.7rem;
+  }
+
+  .Aboutus-section{
+    margin: 20rem 0 0 0;
+
+  }
+  .about-container{
+    gap: 20px;
+  }
+
+  .about-title{
+    font-size: 1.8rem;
+  }
+
+  .about-us-Image{
+    max-width: 280px;
+  }
+
+  .about-block p{
+    font-size: 0.98rem;
   }
 }
