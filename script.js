@@ -3,6 +3,10 @@ const slides = Array.from(document.querySelectorAll(".project-slide"));
 const prevBtn = document.querySelector(".proj-arrow.prev");
 const nextBtn = document.querySelector(".proj-arrow.next");
 const dotsContainer = document.querySelector(".project-dots");
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const menuOverlay = document.getElementById("menuOverlay");
+const mobileLinks = document.querySelectorAll(".mobile-links a");
 
 let index = 0;
 let slidesPerView = 3;
@@ -57,6 +61,30 @@ window.addEventListener("resize", () => {
   index = 0;
   updateCarousel();
 });
+
+function openMenu(){
+  mobileMenu.classList.add("open");
+  menuOverlay.classList.add("show");
+  menuBtn.classList.add("active");
+}
+
+function closeMenu(){
+  mobileMenu.classList.remove("open");
+  menuOverlay.classList.remove("show");
+  menuBtn.classList.remove("active");
+}
+
+menuBtn.addEventListener("click", () => {
+  if (mobileMenu.classList.contains("open")) closeMenu();
+  else openMenu();
+});
+
+menuOverlay.addEventListener("click", closeMenu);
+mobileLinks.forEach(link => {
+  link.addEventListener("click", closeMenu);
+});
+
+
 
 updateSlidesPerView();
 createDots();

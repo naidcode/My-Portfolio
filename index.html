@@ -7,7 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="module" src="firebaseauth.js"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -16,6 +17,11 @@
   <!--Navbar -->
   <header class="header">
     <nav class="navbar">
+      <button class="menu-btn" id="menuBtn" aria-label="Open Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
       <h1 class="logo"><span class="logomain">N</span>ahid</h1>
 
       <ul class="navlinks">
@@ -24,13 +30,23 @@
         <li><a href="#project">Project</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#testimonial">Testimonial</a></li>
-
-
-
       </ul>
 
       <a href="#contact" class="contactBtn">Contact Me</a>
     </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="mobile-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#aboutus">About Us</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonial">Testimonial</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+<div class="menu-overlay" id="menuOverlay"></div>
   </header>
 
   <!-- Hero Section -->
@@ -371,9 +387,9 @@
       </p>
     </div>
 
-    <!-- ✅ Empty State Card -->
+    <!-- Empty State Card -->
     <div class="testimonial-empty-box">
-      <h3>No testimonials yet 😅</h3>
+      <h3>No testimonials yet</h3>
       <p>
         I’m currently working with clients and building my portfolio.
         Soon I’ll add real feedback here.
@@ -385,6 +401,64 @@
   </div>
 </section>
 
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+
+    <div class="contact-heading">
+      <h2 class="contact-title">Contact Me</h2>
+      <p class="contact-subtitle">
+        Have a project idea? Send me a message and I’ll reply soon.
+      </p>
+    </div>
+
+    <div class="contact-wrapper">
+
+      <div class="contact-info">
+        <h3>Let’s work together</h3>
+        <p>
+          I create modern websites, redesign old ones, and maintain WordPress projects.
+          If you want a clean and fast website, message me now.
+        </p>
+
+        <div class="contact-mini">
+          <p><b>Email:</b> nahidpasha66@gmail.com or naidcode.dev@gmail.com</p>
+          <p><b>Location:</b> Bangalore, India</p>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="Website Design / Redesign..." required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" name="message" placeholder="Write your message..." required></textarea>
+        </div>
+
+        <button type="submit" class="contact-submit-btn" id="sendBtn">
+          Send Message
+        </button>
+
+        <p class="form-status" id="formStatus"></p>
+      </form>
+
+    </div>
+    
+  </section>
+</div>
+</div>
 </body>
 <script src="script.js"></script>
 </html>
