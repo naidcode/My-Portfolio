@@ -483,6 +483,7 @@ body{
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: 0.25s ease;
+  margin-top: 20px;
 }
 
 .project-card:hover{
@@ -615,6 +616,83 @@ body{
   border: 2px solid black;
 }
 
+.project-carousel{
+  position: relative;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.project-track-wrapper{
+  overflow: hidden;
+  width: 100%;
+}
+
+.project-track{
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
+}
+
+.project-slide{
+  flex: 0 0 calc(33.333% - 14px);
+}
+
+.proj-arrow{
+  position: absolute;
+  top: 42%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  background: var(--button-background-color);
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.25s ease;
+}
+
+.proj-arrow:hover{
+  transform: translateY(-50%) translate(-3px, -3px);
+  box-shadow: 4px 4px 0 #000;
+}
+
+.proj-arrow:active{
+  transform: translateY(-50%) translate(1px, 1px);
+  box-shadow: 0 0 0 #000;
+}
+
+.proj-arrow.prev{
+  left: -20px;
+}
+
+.proj-arrow.next{
+  right: -20px;
+}
+
+.project-dots{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.project-dots button{
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.project-dots button.active{
+  background: var(--button-background-color);
+}
+
+
 
 @media (max-width: 950px){
   .navlinks{
@@ -696,6 +774,10 @@ body{
 
   .project-grid{
     grid-template-columns: repeat(2, 1fr);
+  }
+
+   .project-slide{
+    flex: 0 0 calc(50% - 10px);
   }
 }
 
@@ -790,6 +872,18 @@ body{
 
   .project-image{
     height: 180px;
+  }
+
+   .project-slide{
+    flex: 0 0 100%;
+  }
+
+  .proj-arrow.prev{
+    left: -10px;
+  }
+
+  .proj-arrow.next{
+    right: -10px;
   }
 }
 
