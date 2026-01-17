@@ -1654,7 +1654,7 @@ body{
   }
 
   .project-grid{
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
    .project-slide{
@@ -1810,6 +1810,24 @@ body{
     padding: 20px;
   }
 
+   .project-card{
+    width: 350px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .project-section{
+    margin: 27em 0 0 0;
+    padding: 10px 0;
+  }
+
+  .project-carousel{
+    padding: 2px 20px;
+  }
+
+  .mainImage{
+    z-index: -1;
+  }
+
     .project-grid{
     grid-template-columns: 1fr;
   }
@@ -1869,6 +1887,54 @@ body{
 
 }
 
+@media (max-width: 740px){
+    .project-card{
+    width: 300px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .project-section{
+    margin: 27em 0 0 0;
+    padding: 10px 0;
+  }
+
+  .project-carousel{
+    padding: 2px 20px;
+  }
+
+  .mainImage{
+    z-index: -1;
+  }
+
+    .project-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 675px){
+    .project-card{
+    width: 280px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .project-section{
+    margin: 27em 0 0 0;
+    padding: 10px 0;
+  }
+
+  .project-carousel{
+    padding: 2px 20px;
+  }
+
+  .mainImage{
+    z-index: -1;
+  }
+
+    .project-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 400px){
 
   .contactBtn{
@@ -1878,8 +1944,25 @@ body{
     padding: 0;
   }
 
+  .project-card{
+    width: 290px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .testimonial-section{
+    padding: 0px 0;
+    margin: 1em 0;
+  }
   .project-section{
     margin: 27em 0 0 0;
     padding: 10px 0;
+  }
+
+  .project-carousel{
+    padding: 2px 20px;
+  }
+
+  .mainImage{
+    z-index: -1;
   }
 }
