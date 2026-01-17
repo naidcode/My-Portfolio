@@ -32,7 +32,7 @@ if (form) {
     const message = document.getElementById("message").value.trim();
 
     if (!name || !email || !subject || !message) {
-      statusText.innerText = "❌ Please fill all fields.";
+      statusText.innerText = "Please fill all fields.";
       return;
     }
 
@@ -55,12 +55,12 @@ if (form) {
         message
       });
 
-      statusText.innerText = "✅ Message sent successfully!";
+      statusText.innerText = "Message sent successfully!";
       form.reset();
 
     } catch (error) {
       console.error(error);
-      statusText.innerText = "❌ Error! Message not sent.";
+      statusText.innerText = "Error! Message not sent.";
     }
 
     sendBtn.innerText = "Send Message";
